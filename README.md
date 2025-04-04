@@ -27,7 +27,8 @@
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
   
-![Don't leave me in your README!](image/Our%20CRC%20Cards.pdf "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Our CRC Cards 1.png](image/Our%20CRC%20Cards%201.png)
+![Our CRC Cards 2.png](image/Our%20CRC%20Cards%202.png)
 
 ❗️**Branches**: This project will **require** effective use of git. 
 
