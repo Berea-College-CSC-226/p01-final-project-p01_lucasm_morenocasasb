@@ -57,7 +57,10 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    Bryanna has been making the player and she has made modifications to the images and the characters and has made it similar to
+    taco cat game. I have been working on the game aspect in terms of it coming together and playing out and making modifications
+    to it to make sure that we have differnt options when choosing different levels. We feel we are on the right track 
+    and we feel there is not to much to worry about. Something that surprized us was out pace on how far we got in writing our code. 
 ```
 
 ---
