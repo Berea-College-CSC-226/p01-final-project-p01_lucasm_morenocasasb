@@ -49,7 +49,7 @@ class Ghost:
             self.rect.move_ip(0, self.vertical_step)
             self.horizontal_direction = 1
 
-class NPC(Ghost, all):
+class NPC(All):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = None
