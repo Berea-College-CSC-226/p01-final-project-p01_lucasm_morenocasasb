@@ -4,7 +4,7 @@ import pygame
 class Player(pygame.sprite.Sprite):
     def __init__(self, screen_size):
         """
-        Gamer can play as the player (in this case, Pacman)
+        Gamer can play as the player (in this case, Pacman as the player)
 
         :param screen_size: The size of the screen of the game
         """
