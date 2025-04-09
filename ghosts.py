@@ -47,20 +47,13 @@ class Ghost:
             self.rect.move_ip(0, self.vertical_step)
             self.horizontal_direction = 1
 
-class Ghost1(Ghost):
-    def __init__(self):
-        self.movement(random.randrange(1,15))
+class NPC(Ghost, all):
+    def lime(self):
         self.surf = pygame.image.load("image/Lime Ghost.png").convert_alpha()
         self.rect = self.surf.get_rect()
-
-class Ghost2(Ghost):
-    def __init__(self):
-        self.movement(random.randrange(1,15))
+    def purple(self):
         self.surf = pygame.image.load("image/Purple Ghost.png").convert_alpha()
         self.rect = self.surf.get_rect()
-
-class Ghost3(Ghost):
-    def __init__(self):
-        self.movement(random.randrange(1,15))
+    def red(self):
         self.surf = pygame.image.load("image/Red Ghost.png").convert_alpha()
         self.rect = self.surf.get_rect()
