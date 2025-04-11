@@ -51,14 +51,14 @@ class Ghost(all):
 class Ghost1(Ghost):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.surf = pygame.image.load().convert_alpha()
+        self.surf = pygame.image.load("Purple Ghost.png").convert_alpha()
 
 class Ghost2(Ghost):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.surf = pygame.image.load().convert_alpha()
+        self.surf = pygame.image.load("Lime Ghost.png").convert_alpha()
 
 class Ghost3(Ghost):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.surf = pygame.image.load().convert_alpha()
+        self.surf = pygame.image.load("Red Ghost.png").convert_alpha()
