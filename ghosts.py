@@ -1,7 +1,7 @@
 import pygame, random
 
 
-class all(pygame.sprite.Sprite):
+class NPC(pygame.sprite.Sprite):
     move_distance = random.randrange(1, 15)
 
     def __init__(self, screen_size):
@@ -30,11 +30,9 @@ class all(pygame.sprite.Sprite):
         if self.rect.right >= self.screen_size[0]:
             self.path = "west"
 
-class Ghost(all):
+class Ghost(NPC):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.rect = self.surf.get_rect()
-        self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
         self.horizontal_direction = 1
         self.vertical_step = 20
 
@@ -52,13 +50,19 @@ class Ghost1(Ghost):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = pygame.image.load("Purple Ghost.png").convert_alpha()
+        self.rect = self.surf.get_rect()
+        self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
 
 class Ghost2(Ghost):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = pygame.image.load("Lime Ghost.png").convert_alpha()
+        self.rect = self.surf.get_rect()
+        self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
 
 class Ghost3(Ghost):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = pygame.image.load("Red Ghost.png").convert_alpha()
+        self.rect = self.surf.get_rect()
+        self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
