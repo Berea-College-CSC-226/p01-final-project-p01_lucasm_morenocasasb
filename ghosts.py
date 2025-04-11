@@ -33,7 +33,6 @@ class all(pygame.sprite.Sprite):
 class Ghost(all):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.surf = pygame.image.load().convert_alpha()
         self.rect = self.surf.get_rect()
         self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
         self.horizontal_direction = 1
@@ -50,13 +49,16 @@ class Ghost(all):
             self.horizontal_direction = 1
 
 class Ghost1(Ghost):
-    def __init__(self):
-        self.movement(random.randrange(1,15))
+    def __init__(self, screen_size):
+        super().__init__(screen_size)
+        self.surf = pygame.image.load().convert_alpha()
 
 class Ghost2(Ghost):
-    def __init__(self):
-        self.movement(random.randrange(1,15))
+    def __init__(self, screen_size):
+        super().__init__(screen_size)
+        self.surf = pygame.image.load().convert_alpha()
 
 class Ghost3(Ghost):
-    def __init__(self):
-        self.movement(random.randrange(1,15))
+    def __init__(self, screen_size):
+        super().__init__(screen_size)
+        self.surf = pygame.image.load().convert_alpha()
