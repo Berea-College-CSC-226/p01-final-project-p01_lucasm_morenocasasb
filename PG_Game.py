@@ -3,7 +3,7 @@ from tkinter import ttk
 
 import pygame
 from player import Player
-from ghosts import all
+from ghosts import NPC
 
 class Game:
     def __init__(self, windowtext="Exloring Tkinter"):
@@ -14,7 +14,7 @@ class Game:
         self.screen.fill((0,0,0))
         self.clock = pygame.time.Clock()
         self.player = Player(self.size)
-        self.all = all(self.size)
+        self.ghost = NPC(self.size)
         self.root = tk.Tk()
         self.root.minsize(width=300, height=150)
         self.root.maxsize(width=100, height=200)
@@ -30,6 +30,9 @@ class Game:
 
     def create_button(self):
         self.button = tk.Button(self.root, text="Easy", command=self.run)
+        if self.button:
+            run = self.run()
+
         self.button.pack()
 
 
@@ -39,16 +42,16 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.running = False
 
-            if pygame.sprite.spritecollide(self.player, [self.all], False):
+            if pygame.sprite.spritecollide(self.player, [self.ghost], False):
                 font = pygame.font.SysFont("comicsans", 20)
                 txt = font.render("GAME OVER", True, ("red"))
                 self.screen.blit(txt, (self.size[0]//2, self.size[1]-100))
             else:
                 self.player.movement(pygame.key.get_pressed())
-                self.all.movement()
+                self.ghost.movement()
                 self.screen.fill((0, 0, 0))
                 self.screen.blit(self.player.surf, self.player.rect)
-                self.screen.blit(self.all.surf, self.all.rect)
+                self.screen.blit(self.ghost.surf, self.ghost.rect)
             pygame.display.update()
             self.clock.tick(24)
 
