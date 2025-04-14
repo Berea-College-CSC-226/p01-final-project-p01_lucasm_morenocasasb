@@ -15,21 +15,6 @@ class NPC(pygame.sprite.Sprite):
         self.rect = pygame.Rect(0, 0, 0, 0)
         self.path = None
 
-    def get_direction(self):
-        """
-        Keeps the ghosts inside
-
-        :return: None
-        """
-        if self.rect.bottom >= self.screen_size[1]:
-            self.path = "north"
-        if self.rect.top <= 0:
-            self.path = "south"
-        if self.rect.left <= 0:
-            self.path = "east"
-        if self.rect.right >= self.screen_size[0]:
-            self.path = "west"
-
 class Ghost(NPC):
     def __init__(self, screen_size):
         super().__init__(screen_size)
@@ -46,6 +31,21 @@ class Ghost(NPC):
             self.rect.left = 0
             self.rect.move_ip(0, self.vertical_step)
             self.horizontal_direction = 1
+
+    def get_direction(self):
+        """
+        Keeps the ghosts inside
+
+        :return: None
+        """
+        if self.rect.bottom >= self.screen_size[1]:
+            self.path = "north"
+        if self.rect.top <= 0:
+            self.path = "south"
+        if self.rect.left <= 0:
+            self.path = "east"
+        if self.rect.right >= self.screen_size[0]:
+            self.path = "west"
 
     def ghost1(self, screen_size=None):
         super().__init__(screen_size)
