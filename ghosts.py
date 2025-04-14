@@ -11,6 +11,7 @@ class NPC(pygame.sprite.Sprite):
         :param screen_size: Ghosts should be inside the screen at all times
         """
         super().__init__()
+        self.surf = None
         self.vertical_step = 20
         self.horizontal_direction = 1
         self.screen_size = screen_size
@@ -31,7 +32,7 @@ class NPC(pygame.sprite.Sprite):
 class Ghost(NPC):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.surf = None
+        self.surf = pygame.surface.Surface
 
     def get_direction(self):
         """

@@ -20,7 +20,6 @@ class Game:
         self.root.maxsize(width=100, height=200)
         self.root.title(windowtext)
 
-
     def game_menu(self):
         self.menubutton = tk.Menubutton(self.root, text="Welcome Player Choose Your Game Level!")
         self.menu = tk.Menu(self.menubutton, tearoff=0)
