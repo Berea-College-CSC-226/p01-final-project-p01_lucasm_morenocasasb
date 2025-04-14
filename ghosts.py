@@ -52,15 +52,18 @@ class Ghost(NPC):
         self.surf = pygame.image.load("Purple Ghost.png").convert_alpha()
         self.rect = self.surf.get_rect()
         self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
+        self.movement()
     
     def ghost2(self, screen_size=None):
         super().__init__(screen_size)
         self.surf = pygame.image.load("Lime Ghost.png").convert_alpha()
         self.rect = self.surf.get_rect()
         self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
+        self.movement()
     
     def ghost3(self, screen_size=None):
         super().__init__(screen_size)
         self.surf = pygame.image.load("Red Ghost.png").convert_alpha()
         self.rect = self.surf.get_rect()
         self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
+        self.movement()
