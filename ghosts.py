@@ -17,6 +17,9 @@ class NPC(pygame.sprite.Sprite):
         self.screen_size = screen_size
         self.rect = pygame.Rect(0, 0, 0, 0)
         self.path = None
+        self.surf = pygame.Surface((2, 2))
+        self.rect = self.surf.get_rect()
+
 
     def movement(self):
         self.rect.move_ip(self.horizontal_direction * self.move_distance, 0)

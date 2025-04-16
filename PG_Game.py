@@ -4,6 +4,7 @@ from tkinter import ttk
 import pygame
 from player import Player
 from ghosts import NPC
+from ghosts import Ghost
 
 class Game:
     def __init__(self, windowtext="Exloring Tkinter"):
@@ -29,11 +30,7 @@ class Game:
 
     def create_button(self):
         self.button = tk.Button(self.root, text="Easy", command=self.run)
-        if self.button:
-            run = self.run()
-
         self.button.pack()
-
 
     def run(self):
         while self.running:
