@@ -1,13 +1,13 @@
 import tkinter as tk
-from tkinter import ttk
 
 import pygame
-from player import Player
-from ghosts import NPC
+
 from ghosts import Ghost
+from player import Player
+
 
 class Game:
-    def __init__(self, windowtext="Exloring Tkinter"):
+    def __init__(self, windowtext="Pac-Man Game"):
         self.size = (800, 600)
         self.running = True
         pygame.init()
@@ -15,24 +15,34 @@ class Game:
         self.screen.fill((0,0,0))
         self.clock = pygame.time.Clock()
         self.player = Player(self.size)
-        self.ghost = NPC(self.size)
+        self.ghost = Ghost(self.size)
         self.root = tk.Tk()
         self.root.minsize(width=300, height=150)
         self.root.maxsize(width=100, height=200)
         self.root.title(windowtext)
+        self.textbox = tk.StringVar()
 
     def game_menu(self):
         self.menubutton = tk.Menubutton(self.root, text="Welcome Player Choose Your Game Level!")
         self.menu = tk.Menu(self.menubutton, tearoff=0)
         self.menubutton["menu"] = self.menu
-        # self.menu.add_command(label="Option1", command= "run")
         self.menubutton.pack()
 
+
     def create_button(self):
-        self.button = tk.Button(self.root, text="Easy", command=self.run)
-        self.button.pack()
+        self.buttonEasy = tk.Button(self.root, text="Easy", command=self.run)
+        self.buttonEasy.pack()
+
+        '''
+        self.buttonMedium = tk.Button(self.root, text="Medium", command=self.run)
+        self.buttonMedium.pack()
+
+        self.buttonHard = tk.Button(self.root, text="Hard", command=self.run)
+        self.buttonHard.pack()
+        '''
 
     def run(self):
+
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -52,6 +62,7 @@ class Game:
             self.clock.tick(24)
 
         pygame.quit()
+
 
 def main():
     myGUI = Game()

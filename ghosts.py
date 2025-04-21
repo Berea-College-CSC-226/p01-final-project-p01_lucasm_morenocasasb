@@ -36,6 +36,11 @@ class Ghost(NPC):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = pygame.surface.Surface
+        self.surf = pygame.transform.scale(pygame.image.load("image/Purple Ghost.png").convert_alpha(), (50, 50))
+        self.surf = pygame.transform.scale(pygame.image.load("image/Lime Ghost.png").convert_alpha(), (50, 50))
+        self.surf = pygame.transform.scale(pygame.image.load("image/Red Ghost.png").convert_alpha(), (50, 50))
+        self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
+        self.rect = self.surf.get_rect()
 
     def get_direction(self):
         """
@@ -58,14 +63,14 @@ class Ghost(NPC):
         self.rect = self.surf.get_rect()
         self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
         self.movement()
-    
+
     def ghost2(self, screen_size=None):
         super().__init__(screen_size)
         self.surf = pygame.transform.scale(pygame.image.load("image/Lime Ghost.png").convert_alpha(), (50, 50))
         self.rect = self.surf.get_rect()
         self.rect.move_ip(screen_size[0] // 4, screen_size[1] // 4)
         self.movement()
-    
+
     def ghost3(self, screen_size=None):
         super().__init__(screen_size)
         self.surf = pygame.transform.scale(pygame.image.load("image/Red Ghost.png").convert_alpha(), (50, 50))
