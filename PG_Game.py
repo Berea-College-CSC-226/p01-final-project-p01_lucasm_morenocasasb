@@ -2,8 +2,11 @@ import tkinter as tk
 
 import pygame
 
-from ghosts import Ghost
+# from ghosts import Ghost
 from player import Player
+from New_File_Ghosts import red
+from New_File_Ghosts import lime
+from New_File_Ghosts import purple
 
 
 class Game:
@@ -15,7 +18,10 @@ class Game:
         self.screen.fill((0,0,0))
         self.clock = pygame.time.Clock()
         self.player = Player(self.size)
-        self.ghost = Ghost(self.size)
+        # self.ghost = Ghost(self.size)
+        self.redghost = red(self.size)
+        self.limeghost = lime(self.size)
+        self.purpleghost = purple(self.size)
         self.root = tk.Tk()
         self.root.minsize(width=300, height=150)
         self.root.maxsize(width=100, height=200)
@@ -48,16 +54,29 @@ class Game:
                 if event.type == pygame.QUIT:
                     self.running = False
 
-            if pygame.sprite.spritecollide(self.player, [self.ghost], False):
+            if pygame.sprite.collide_rect(self.player, self.redghost):
+                font = pygame.font.SysFont("comicsans", 20)
+                txt = font.render("GAME OVER", True, ("red"))
+                self.screen.blit(txt, (self.size[0]//2, self.size[1]-100))
+            elif pygame.sprite.collide_rect(self.player, self.limeghost):
+                font = pygame.font.SysFont("comicsans", 20)
+                txt = font.render("GAME OVER", True, ("red"))
+                self.screen.blit(txt, (self.size[0]//2, self.size[1]-100))
+            elif pygame.sprite.collide_rect(self.player, self.purpleghost):
                 font = pygame.font.SysFont("comicsans", 20)
                 txt = font.render("GAME OVER", True, ("red"))
                 self.screen.blit(txt, (self.size[0]//2, self.size[1]-100))
             else:
                 self.player.movement(pygame.key.get_pressed())
-                self.ghost.movement()
+                self.redghost.movement(screen_size=self.size)
+                self.limeghost.movement(screen_size=self.size)
+                self.purpleghost.movement(screen_size=self.size)
                 self.screen.fill((0, 0, 0))
                 self.screen.blit(self.player.surf, self.player.rect)
-                self.screen.blit(self.ghost.surf, self.ghost.rect)
+                self.screen.blit(self.redghost.surf, self.redghost.rect)
+                self.screen.blit(self.limeghost.surf, self.limeghost.rect)
+                self.screen.blit(self.purpleghost.surf, self.purpleghost.rect)
+
             pygame.display.update()
             self.clock.tick(24)
 

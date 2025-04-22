@@ -1,4 +1,5 @@
 import pygame, random
+from Tools.scripts.patchcheck import normalize_c_whitespace
 
 
 class NPC(pygame.sprite.Sprite):
@@ -36,9 +37,17 @@ class Ghost(NPC):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = pygame.surface.Surface
+        self.surf = random.randrange(1, 15)
         self.surf = pygame.transform.scale(pygame.image.load("image/Purple Ghost.png").convert_alpha(), (50, 50))
         self.surf = pygame.transform.scale(pygame.image.load("image/Lime Ghost.png").convert_alpha(), (50, 50))
         self.surf = pygame.transform.scale(pygame.image.load("image/Red Ghost.png").convert_alpha(), (50, 50))
+        for ghost in screen_size:
+            if "image/Purple Ghost.png":
+
+            elif "image/Lime Ghost.png":
+                pygame.transform.scale(pygame.image.load("image/Purple Ghost").convert_alpha(), (50, 50))
+            elif "image/Red Ghost.png":
+                pygame.transform.scale
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
 
