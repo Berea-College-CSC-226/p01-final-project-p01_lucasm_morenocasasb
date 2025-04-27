@@ -11,17 +11,8 @@ from New_File_Ghosts import purple
 
 class Game:
     def __init__(self, windowtext="Pac-Man Game"):
-        self.size = (800, 600)
-        self.running = True
-        pygame.init()
-        self.screen = pygame.display.set_mode(self.size)
-        self.screen.fill((0,0,0))
         self.clock = pygame.time.Clock()
-        self.player = Player(self.size)
         # self.ghost = Ghost(self.size)
-        self.redghost = red(self.size)
-        self.limeghost = lime(self.size)
-        self.purpleghost = purple(self.size)
         self.root = tk.Tk()
         self.root.minsize(width=300, height=150)
         self.root.maxsize(width=100, height=200)
@@ -48,6 +39,15 @@ class Game:
         '''
 
     def run(self):
+        self.size = (800, 600)
+        self.running = True
+        pygame.init()
+        self.screen = pygame.display.set_mode(self.size)
+        self.screen.fill((0, 0, 0))
+        self.player = Player(self.size)
+        self.redghost = red(self.size)
+        self.limeghost = lime(self.size)
+        self.purpleghost = purple(self.size)
 
         while self.running:
             for event in pygame.event.get():

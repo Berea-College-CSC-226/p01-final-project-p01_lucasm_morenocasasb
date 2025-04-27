@@ -4,6 +4,8 @@ from Tools.scripts.patchcheck import normalize_c_whitespace
 
 class NPC(pygame.sprite.Sprite):
     move_distance = random.randrange(1, 15)
+    directions = ["north", "east", "south", "west"]
+
 
     def __init__(self, screen_size):
         """
@@ -22,26 +24,30 @@ class NPC(pygame.sprite.Sprite):
         self.rect = self.surf.get_rect()
 
 
+
     def movement(self):
         self.rect.move_ip(self.horizontal_direction * self.move_distance, 0)
         if self.rect.right >= self.screen_size[0]:
             self.rect.right = self.screen_size[0]
             self.horizontal_direction = -1
-        elif self.rect.left <= 0:
+        if self.rect.left <= 0:
             self.rect.left = 0
             self.rect.move_ip(0, self.vertical_step)
             self.horizontal_direction = 1
+
+        self.get_direction()
+
 
 
 class Ghost(NPC):
     def __init__(self, screen_size):
         super().__init__(screen_size)
         self.surf = pygame.surface.Surface
-        self.surf = random.randrange(1, 15)
+        self.surf = random.randrange(1, 15)  #ask about what this do
         self.surf = pygame.transform.scale(pygame.image.load("image/Purple Ghost.png").convert_alpha(), (50, 50))
         self.surf = pygame.transform.scale(pygame.image.load("image/Lime Ghost.png").convert_alpha(), (50, 50))
         self.surf = pygame.transform.scale(pygame.image.load("image/Red Ghost.png").convert_alpha(), (50, 50))
-        for ghost in screen_size:
+        for ghost in screen_size:# why line 50-59 do why a loop
             if "image/Purple Ghost.png":
 
             elif "image/Lime Ghost.png":
@@ -50,6 +56,8 @@ class Ghost(NPC):
                 pygame.transform.scale
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
+        self.path = random.choice(self.directions)
+
 
     def get_direction(self):
         """
@@ -65,6 +73,10 @@ class Ghost(NPC):
             self.path = "east"
         if self.rect.right >= self.screen_size[0]:
             self.path = "west"
+        elif random.random() > .95:
+            self.path = random.choice(self.directions)
+
+
 
     def ghost1(self, screen_size=None):
         super().__init__(screen_size)

@@ -18,6 +18,10 @@ class NPC(pygame.sprite.Sprite):
         self.surf = pygame.Surface(screen_size)
         self.rect = pygame.Rect(screen_size)
         self.rect = self.surf.get_rect()
+        self.surf = pygame.Surface((2, 2))
+        self.vertical_step = 20
+        self.horizontal_direction = 1
+
 
     def get_direction(self):
         """
@@ -41,20 +45,30 @@ class red:
     def __init__(self, screen_size):
         self.screen_size = None
         self.horizontal_direction = 1
-        self.move_distance = 35
+        self.vertical_direction = 1
+        self.move_distance = 25
         self.surf = pygame.transform.scale(pygame.image.load("image/Red Ghost.png").convert_alpha(), (50, 50))
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
+        self.rect.move_ip(screen_size[1] // 2, screen_size[1] // 4)
+
         
     def movement(self, screen_size):
-        self.rect.move_ip(self.horizontal_direction * self.move_distance, 0)
-        if self.rect.right >= 0:
-            self.rect.right = 0
-            self.horizontal_direction = -1
+        self.rect.x += (self.horizontal_direction * self.move_distance)
+        self.rect.y += (self.vertical_direction * self.move_distance)
+        if self.rect.right >= screen_size[0]:
+            self.rect.right = screen_size[0]
+            self.horizontal_direction *= -1
         elif self.rect.left <= 0:
             self.rect.left = 0
-            self.rect.move_ip(0, 20)
-            self.horizontal_direction = 1
+            self.horizontal_direction *= -1
+
+        if self.rect.bottom >= screen_size[1]:
+            self.rect.bottom = screen_size[1]
+            self.vertical_direction *= -1
+        elif self.rect.top <= 0:
+            self.rect.top = 0
+            self.vertical_direction *= -1
 
 
 class lime:
@@ -63,20 +77,31 @@ class lime:
     def __init__(self, screen_size):
         self.screen_size = None
         self.horizontal_direction = 1
-        self.move_distance = 16
+        self.vertical_direction = 1
+        self.move_distance = 25
         self.surf = pygame.transform.scale(pygame.image.load("image/Lime Ghost.png").convert_alpha(), (50, 50))
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
+        self.rect.move_ip(screen_size[1] // 2, screen_size[0] // 4)
+
 
     def movement(self, screen_size):
-        self.rect.move_ip(self.horizontal_direction * self.move_distance, 0)
-        if self.rect.right >= 0:
-            self.rect.right = 0
-            self.horizontal_direction = -1
+        self.rect.x += (self.horizontal_direction * self.move_distance)
+        self.rect.y += (self.vertical_direction * self.move_distance)
+
+        if self.rect.right >= screen_size[0]:
+            self.rect.right = screen_size[0]
+            self.horizontal_direction *= -1
         elif self.rect.left <= 0:
             self.rect.left = 0
-            self.rect.move_ip(0, 20)
-            self.horizontal_direction = 1
+            self.horizontal_direction *= -1
+
+        if self.rect.bottom >= screen_size[1]:
+            self.rect.bottom = screen_size[1]
+            self.vertical_direction *= -1
+        elif self.rect.top <= 0:
+            self.rect.top = 0
+            self.vertical_direction *= -1
 
 
 class purple:
@@ -85,17 +110,28 @@ class purple:
     def __init__(self, screen_size):
         self.screen_size = None
         self.horizontal_direction = 1
-        self.move_distance = 47
+        self.vertical_direction = 1
+        self.move_distance = 25
         self.surf = pygame.transform.scale(pygame.image.load("image/Purple Ghost.png").convert_alpha(), (50, 50))
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
+        self.rect.move_ip(screen_size[1] // 4, screen_size[0] // 4)
 
-    def movement(self, screen_size):
-        self.rect.move_ip(self.horizontal_direction * self.move_distance, 0)
-        if self.rect.right >= 0:
-            self.rect.right = 0
-            self.horizontal_direction = -1
+
+    def movement(self,screen_size):
+        self.rect.x += (self.horizontal_direction * self.move_distance)
+        self.rect.y += (self.vertical_direction * self.move_distance)
+
+        if self.rect.right >= screen_size[0]:
+            self.rect.right = screen_size[0]
+            self.horizontal_direction *= -1
         elif self.rect.left <= 0:
             self.rect.left = 0
-            self.rect.move_ip(0, 20)
-            self.horizontal_direction = 1
+            self.horizontal_direction *= -1
+
+        if self.rect.bottom >= screen_size[1]:
+            self.rect.bottom = screen_size[1]
+            self.vertical_direction *= -1
+        elif self.rect.top <= 0:
+            self.rect.top = 0
+            self.vertical_direction *= -1
