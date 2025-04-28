@@ -117,7 +117,35 @@ Each partner should write three to four well-written paragraphs address the foll
 ```
 
 ```
-    Partner 2: **Replace this text with your reflection
+    Partner 2: Bryanna
+Megan presented the idea of making a pac-man related game that we can use The Legend of Tuna as a reference but making
+our us version. Since we had something to go on with and we split the work, to make things much more faster and
+beneficial. I would say we communicated very well of what we imagine this game would look like. It was stressful to
+debug and make the code do what we want. Initially, we had a good idea of what we want and the outcome looked similarly
+of what we wanted. The concept was for Pac Man to move with the arrow keys and the ghosts to move on their own. At the
+beginning, created the game itself and the characters and then we eventually imported the characters to the game. We
+were stuck on the code and how to make the ghosts appear for a long time. At the end, we eventually got the ghosts to
+move how we wanted them to move. We also thought of making levels, but we eventually agreed to make it one level since
+it took us a long time to debug it.
+
+I learned that I should be patient and learn the functions and packages to better understand what I am going for. I feel
+like in my own time, I should think more closely on what I need my code to do and how can I improve. It's more or less
+my knowledge in (mainly) pygame and GUI so that we can have a better understanding. The hardest part of the final
+project is to change certain codes in the file where the ghosts will appear. The first file (ghosts.py) wasn't as good
+as I had interpreted. I think it had a lot of barriers and a lot of things that couldn't be mix well with the game
+itself. I created a new file (New_File_Ghosts.py) where everything is where we wanted it to go and it was a bit easier,
+compared to the previous file, to edit. I am glad I made the decision to redo the code in a different file because I
+don't think we would complete the game if we stuck with the ghosts.py file.
+
+Next time, I would like to be patient and work together with my partner. What I would have in mind is to brainstorm
+more and continue to think "How can we make this work" and to experiment with different methods or codes until we get
+our satisfying outcome. Overall, I think Megan and I did a great job in communicating. I think the only thing different
+that I can change is time management because it gets a bit busy when having an opportunity to go to the store and get
+some things when it's time to store my stuff and move out. Other than that, we would meet on the days we both agree to
+meet in. We both communicate what we want to do with our code and we both allowed each other to have freewill to modify
+the code in our own time. I feel like that was a good idea because we had successfully finished the game. The
+challenging part, as mentioned before, was the code in the file where the ghosts will appear and how to modify it to
+accommodate the game and to change a bit of the code so that it'll compliment the game better.
 ```
 
 ---
