@@ -93,7 +93,6 @@ class Game:
             self.screen.blit(timer_display, (10, 10))
             pygame.display.update()
             self.clock.tick(24)
-            exitonclick()
 
         pygame.quit()
 
