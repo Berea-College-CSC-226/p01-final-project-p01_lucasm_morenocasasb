@@ -12,36 +12,37 @@ from New_File_Ghosts import purple
 class Game:
     def __init__(self, windowtext="Pac-Man Game"):
         self.clock = pygame.time.Clock()
-        # self.ghost = Ghost(self.size)
         self.root = tk.Tk()
         self.root.minsize(width=300, height=150)
         self.root.maxsize(width=100, height=200)
         self.root.title(windowtext)
         self.textbox = tk.StringVar()
+        self.start = False
+        self.remaining_time = 5
+        self.timer_text = str(self.remaining_time).rjust(3)
+
 
     def game_menu(self):
-        self.menubutton = tk.Menubutton(self.root, text="Welcome Player Choose Your Game Level!")
+        self.menubutton = tk.Menubutton(self.root, text="Welcome Player Click Ready to Start!")
         self.menu = tk.Menu(self.menubutton, tearoff=0)
         self.menubutton["menu"] = self.menu
         self.menubutton.pack()
 
 
     def create_button(self):
-        self.buttonEasy = tk.Button(self.root, text="Easy", command=self.run)
+        self.buttonEasy = tk.Button(self.root, text="Ready", command=self.run)
         self.buttonEasy.pack()
 
-        '''
-        self.buttonMedium = tk.Button(self.root, text="Medium", command=self.run)
-        self.buttonMedium.pack()
 
-        self.buttonHard = tk.Button(self.root, text="Hard", command=self.run)
-        self.buttonHard.pack()
-        '''
 
     def run(self):
+        self.game_started =True
+        pygame.font.init()
+        pygame.init()
+        pygame.time.set_timer(pygame.USEREVENT, 1000)
+        self.font = pygame.font.SysFont("Ariel", 40)
         self.size = (800, 600)
         self.running = True
-        pygame.init()
         self.screen = pygame.display.set_mode(self.size)
         self.screen.fill((0, 0, 0))
         self.player = Player(self.size)
@@ -53,6 +54,17 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+                elif event.type == pygame.USEREVENT and self.game_started:
+                    self.remaining_time -= 1
+                    self.timer_text = str(self.remaining_time).rjust(3) if self.remaining_time > 0 else "Time's Up"
+                    if self.remaining_time <= 0:
+                        self.game_started = False
+                        font =pygame.font.SysFont("Ariel", 20)
+                        txt_surface = font.render("Time's Up! You Won!", True, ("Red"))
+                        txt_rect = txt_surface.get_rect(center=(self.size[0]/2, self.size[1]/2))
+                        pygame.display.flip()
+                        pygame.time.delay(500)
+                        self.running = False
 
             if pygame.sprite.collide_rect(self.player, self.redghost):
                 font = pygame.font.SysFont("comicsans", 20)
@@ -77,8 +89,11 @@ class Game:
                 self.screen.blit(self.limeghost.surf, self.limeghost.rect)
                 self.screen.blit(self.purpleghost.surf, self.purpleghost.rect)
 
+            timer_display = self.font.render(self.timer_text, True, (255, 255, 255))
+            self.screen.blit(timer_display, (10, 10))
             pygame.display.update()
             self.clock.tick(24)
+            exitonclick()
 
         pygame.quit()
 

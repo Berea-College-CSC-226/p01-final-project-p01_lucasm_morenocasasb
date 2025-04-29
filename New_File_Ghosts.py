@@ -46,11 +46,11 @@ class red:
         self.screen_size = None
         self.horizontal_direction = 1
         self.vertical_direction = 1
-        self.move_distance = 25
+        self.move_distance = 10
         self.surf = pygame.transform.scale(pygame.image.load("image/Red Ghost.png").convert_alpha(), (50, 50))
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
-        self.rect.move_ip(screen_size[1] // 2, screen_size[1] // 4)
+        self.rect.move_ip(screen_size[0] // 2, screen_size[1] // 6)
 
         
     def movement(self, screen_size):
@@ -78,11 +78,11 @@ class lime:
         self.screen_size = None
         self.horizontal_direction = 1
         self.vertical_direction = 1
-        self.move_distance = 25
+        self.move_distance = 10
         self.surf = pygame.transform.scale(pygame.image.load("image/Lime Ghost.png").convert_alpha(), (50, 50))
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
-        self.rect.move_ip(screen_size[1] // 2, screen_size[0] // 4)
+        self.rect.move_ip(screen_size[1] // 4, screen_size[0] // 2)
 
 
     def movement(self, screen_size):
@@ -111,7 +111,7 @@ class purple:
         self.screen_size = None
         self.horizontal_direction = 1
         self.vertical_direction = 1
-        self.move_distance = 25
+        self.move_distance = 10
         self.surf = pygame.transform.scale(pygame.image.load("image/Purple Ghost.png").convert_alpha(), (50, 50))
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()

@@ -9,6 +9,8 @@
 
 ❗️**Google Doc Link**: https://docs.google.com/document/d/1HjxTedeAqcF3eDhimYU9_QYjkHLQwD4PuQS1KI0Ihkk/edit?usp=sharing
 
+# Acknowledgment: Marcos, Zaki, Scott, and https://gamedevacademy.org/pygame-timer-tutorial-complete-guide/#Pygame_Clock_and_Time_Delay 
+
 ---
 
 ## Milestone 1: Setup, Planning, Design
@@ -70,14 +72,17 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+❗️**Completion Percentage**: `0 - 100%` 85% completion 
 
 ❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+   We felt pretty complete just some minor issue we were having with our code, along with minior changes, and a lot of reviewing our
+   code. Some of the strategies that we wanted to emply ot increas the likelihood that we will be succcessful in completing this 
+   project before the deadline is manage our time in order to be able to meet up and talk about the progress we have made together
+   and indiviually. Also found it helpful to test out some of the things we wanted to implement to our code. 
 ```
 
 ---
@@ -113,7 +118,27 @@ Each partner should write three to four well-written paragraphs address the foll
 - How well did you work with your partner? What made it go well? What made it challenging?
 
 ```
-    Partner 1: **Replace this text with your reflection
+    Partner 1: (Megan)
+    The reason we selected this project, at least for me, was because I wanted to create a game. 
+    I had seen a game developed by a student in a similar class and wanted to build one. I felt that the concept of a 
+    Pac-Man-like game would be relatively easier to implement, especially considering our previous taco count assignment. 
+    Furthermore, I believed it would be a good way to integrate the various concepts we had learned, or at least a significant 
+    portion of them.
+    I feel that our final project generally reflects our initial design. However, a key realization came 
+    towards the end while we had implemented ghosts that could catch the player, we hadn't considered 
+    incorporating a time element to track how long the player survived. The core objective of the game is to stay alive 
+    for as long as possible. 
+    Through this process, I not only honed my computer science skills but also gained a deeper 
+    understanding of the time management required in this field. I found the most challenging aspects to be getting the 
+    ghosts to appear on the screen and integrating the game logic with the button controls. Knowing what we know now, 
+    we could have approached the game's core mechanic differently. Initially, we both thought the game was functioning 
+    as intended until a friend pointed out that the objective of the game not making sense. These were minor adjustments 
+    that we made to change the game so it would make sense. Overall, I feel we collaborated effectively, particularly in 
+    managing our time. However, we could have improved our time management in terms of meeting more consistently. Our 
+    work efficiency was a strong point, but our approaches to problem-solving presented a challenge. Personally, I felt 
+    I had shown my own problem-solving abilities and viewed seeking help as a necessary step, while my partner sometimes 
+    perceived it as an easy way out. Additionally, I was somewhat frustrated by my partner's reluctance to ask for help, 
+    as I believe I could have provided assistance much earlier in certain areas if she had asked.
 ```
 
 ```
