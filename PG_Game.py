@@ -18,7 +18,7 @@ class Game:
         self.root.title(windowtext)
         self.textbox = tk.StringVar()
         self.start = False
-        self.remaining_time = 5
+        self.remaining_time = 120
         self.timer_text = str(self.remaining_time).rjust(3)
 
 
